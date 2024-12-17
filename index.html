@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Collection</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            width: 80%;
+            max-width: 200px;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+
+        div {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #genreOutput, #highestRatedOutput, #titlesOutput, #afterYearOutput {
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Collection</h1>
+    
+    <h2>Add Movie</h2>
+    <div class="input-container">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="genre" placeholder="Genre">
+        <input type="number" id="rating" placeholder="Rating">
+        <input type="number" id="releaseYear" placeholder="Release Year">
+        <button onclick="addMovies()">Add Movie</button>
+    </div>
+    
+    <h2>List Movies by Genre</h2>
+    <div class="input-container">
+        <input type="text" id="genreInput" placeholder="Genre">
+        <button onclick="listMoviesByGenre()">List Movies</button>
+        <button onclick="clearOutput('genreOutput')">Clear</button>
+    </div>
+    <div id="genreOutput"></div>
+    
+    <h2>Highest Rated Movie</h2>
+    <button onclick="findHighestRatedMovie()">Find Highest Rated Movie</button>
+    <button onclick="clearOutput('highestRatedOutput')">Clear</button>
+    <div id="highestRatedOutput"></div>
+    
+    <h2>Movie Titles</h2>
+    <button onclick="getMovieTitles()">Show Movie Titles</button>
+    <button onclick="clearOutput('titlesOutput')">Clear</button>
+    <div id="titlesOutput"></div>
+    
+    <h2>Movies After Year</h2>
+    <div class="input-container">
+        <input type="number" id="yearInput" placeholder="Year">
+        <button onclick="moviesAfterYear()">List Movies After Year</button>
+        <button onclick="clearOutput('afterYearOutput')">Clear</button>
+    </div>
+    <div id="afterYearOutput"></div>
+</body>
+</html>
